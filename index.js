@@ -29,7 +29,7 @@ pdfParser.on('pdfParser_dataReady', () => {
       // 是想抓取的 key 的:
       if (cols.includes(key)) {
         colMap.push(key);
-        valMap.push(str.slice(index + 1));
+        valMap.push(str.slice(index + 2));
       } else {
         valMap[valMap.length - 1] += str;
       }
@@ -38,5 +38,11 @@ pdfParser.on('pdfParser_dataReady', () => {
     }
   }
 
-  console.log(valMap);
+  const buffer = xlsx.build([
+    {
+      name: 'name',
+      data: [colMap, valMap.map((item) => item.replaceAll('\r', '\r\n'))],
+    },
+  ]);
+  fs.writeFileSync('list.csv', buffer, 'binary');
 });
