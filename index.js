@@ -14,11 +14,9 @@ pdfParser.on('pdfParser_dataError', (errData) =>
 pdfParser.on('pdfParser_dataReady', () => {
   const data = pdfParser.getRawTextContent().split('\n');
   const [, head, ...content] = data;
-  const colMap = [];
-  const valMap = [];
-
-  // 去除多余空格
   const [name, formula] = head.replace(/\s+/, ' ').split(' ');
+  const colMap = ['Name', 'Formula'];
+  const valMap = [name, formula];
 
   for (let i = 1, len = content.length; i < len - 2; i++) {
     const str = content[i];
@@ -39,4 +37,6 @@ pdfParser.on('pdfParser_dataReady', () => {
       valMap[valMap.length - 1] += str;
     }
   }
+
+  console.log(valMap);
 });
