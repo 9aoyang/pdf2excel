@@ -15,7 +15,7 @@ pdfParser.on('pdfParser_dataReady', () => {
   const data = pdfParser.getRawTextContent().split('\n');
   const [, head, ...content] = data;
   const [name, formula] = head.replace(/\s+/, ' ').split(' ');
-  const colMap = ['Name', 'Formula'];
+  const colMap = ['', 'Formula'];
   const valMap = [name, formula];
 
   for (let i = 1, len = content.length; i < len - 2; i++) {
