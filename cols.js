@@ -1,0 +1,15 @@
+module.exports = [
+  'Crystal Data',
+  'Physical Properties',
+  'Optical Properties',
+  'Cell Data',
+  'X-ray Powder Pattern',
+  'Chemistry',
+  'Occurrence',
+  'Association',
+  'Distribution',
+  'Name',
+  'Type',
+  'Material',
+  'References',
+];
