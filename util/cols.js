@@ -1,4 +1,6 @@
 module.exports = [
+  '',
+  'Formula',
   'Crystal Data',
   'Physical Properties',
   'Optical Properties',

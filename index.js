@@ -1,6 +1,10 @@
 const pdf2json = require('./util/pdf2json');
 const json2csv = require('./util/json2csv');
 
-const path = './input/test.pdf';
+const main = async () => {
+  const path = __dirname + '/input';
+  const data = await pdf2json(path);
+  json2csv(data);
+};
 
-pdf2json(path).then((data) => json2csv(data));
+main();
