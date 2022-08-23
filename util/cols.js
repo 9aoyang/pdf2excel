@@ -6,6 +6,7 @@ module.exports = [
   'Optical Properties',
   'Cell Data',
   'X-ray Powder Pattern',
+  'X-Ray Diffraction Pattern',
   'Chemistry',
   'Occurrence',
   'Association',
@@ -13,5 +14,6 @@ module.exports = [
   'Name',
   'Type',
   'Material',
+  'Type Material',
   'References',
 ];
