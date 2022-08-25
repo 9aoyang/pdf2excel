@@ -22,7 +22,7 @@ const loadPDF = (file) =>
 
         // 匹配文件名
         const fileName = file
-          .replace(/.+\/([\S.-]+)\.pdf$/, '$1')
+          .replace(/.+\/([\S\s.-]+)\.pdf$/, '$1')
           .replace(/\S/, (s) => s.toUpperCase());
 
         // head 可能出现在第一行，也可能出现在第二行
@@ -74,7 +74,7 @@ const pdf2json = (path) =>
           .catch(() => parserErrorFiles.push(files[i]));
         console.log(`finished: ${i}, total: ${files.length - 1}`);
       }
-      fs.writeFileSync('errorList.txt', parserErrorFiles.join(','), 'utf-8');
+      fs.writeFileSync('errorList.txt', parserErrorFiles.join('\n'), 'utf-8');
       resolve(res);
     });
   });
